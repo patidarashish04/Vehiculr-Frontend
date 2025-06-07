@@ -1,0 +1,158 @@
+.new-login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  font-family: 'Arial', sans-serif;
+}
+
+.new-login-box {
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.welcome-back {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.new-login-subtitle {
+  color: #666;
+  margin-bottom: 30px;
+  font-size: 14px;
+}
+
+.new-login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+}
+
+.form-group label {
+  font-size: 14px;
+  color: #555;
+  font-weight: 500;
+}
+
+.form-input {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #4285f4;
+}
+
+.new-login-button {
+  background-color: #4285f4;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.new-login-button:hover {
+  background-color: #3367d6;
+}
+
+.alternative-options {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.forgot-password {
+  color: #4285f4;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+.sign-up-link {
+  font-size: 14px;
+  color: #666;
+}
+
+.sign-up-link a {
+  color: #4285f4;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.sign-up-link a:hover {
+  text-decoration: underline;
+}
+
+.social-new-login {
+  margin-top: 30px;
+}
+
+.divider {
+  position: relative;
+  margin: 20px 0;
+  color: #999;
+  font-size: 14px;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 40%;
+  height: 1px;
+  background-color: #ddd;
+}
+
+.divider::before {
+  left: 0;
+}
+
+.divider::after {
+  right: 0;
+}
+
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.success-message {
+  color: #28a745;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.error-message {
+  color: #dc3545;
+  font-size: 14px;
+  margin-bottom: 15px;
+}

@@ -1,0 +1,91 @@
+/* src/components/RightSidebar.css */
+.right-sidebar {
+  width: 280px;
+  background-color: #f8f9fa;
+  padding: 20px;
+  position: fixed;
+  right: 30px;
+  top: 163px; /* Below header */
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+  z-index: -2;
+  border-radius: 12px;
+}
+
+
+.big-box {
+  background-color: white;
+  border-radius: 12px;
+  padding: 35px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid #e9ecef;
+}
+
+.big-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.big-box h3 {
+  font-size: 18px;
+  color: #333;
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+
+.big-box-icon {
+  font-size: 32px;
+  color: #3a86ff;
+}
+
+.small-box {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid #e9ecef;
+}
+
+.small-box:hover {
+  background-color: #f1f3f5;
+  transform: translateX(3px);
+}
+
+.small-box-icon {
+  font-size: 18px;
+  margin-right: 12px;
+  color: #495057;
+}
+
+.small-box span {
+  font-size: 14px;
+  color: #343a40;
+  font-weight: 500;
+}
+
+/* Active State */
+.small-box.active {
+  background-color: #e6f0ff;
+  border-left: 3px solid #3a86ff;
+}
+
+.small-box.active .small-box-icon,
+.small-box.active span {
+  color: #3a86ff;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .right-sidebar {
+    width: 240px;
+    padding: 15px;
+  }
+}

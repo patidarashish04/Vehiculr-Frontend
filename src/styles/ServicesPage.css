@@ -1,0 +1,161 @@
+/* src/pages/ServicesPage.css */
+.services-page {
+  margin-left: 50px;
+  margin-right: 55px;
+  margin-top: 16px;
+  padding: 30px;
+  min-height: calc(100vh - 120px);
+  background-color: #f8f9fa;
+  margin-bottom: 50px;
+}
+
+.page-title {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 600;
+  text-align: center;
+  
+}
+
+/* Service Buttons */
+.service-button {
+  background: white;
+  border-radius: 12px;
+  padding: 40px 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e0e0e0;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease;
+  border: none;
+  outline: none;
+}
+
+.service-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  background: #f8f9fa;
+}
+
+.service-button:active {
+  transform: translateY(-2px);
+}
+
+/* .service-button h1 {
+  font-size: 180px;
+  color: #f1ecec;
+  margin-top: 20px;
+  margin-bottom: 0;
+} */
+
+/* Specific button colors matching your image */
+.service-button:nth-child(1) { /* Pre-Owned Vehicles */
+  border-top: 4px solid #3a86ff;
+}
+
+.service-button:nth-child(2) { /* Garages */
+  border-top: 4px solid #4cd964;
+}
+
+.service-button:nth-child(3) { /* Others */
+  border-top: 4px solid #ff9500;
+}
+
+
+/* .sale-banner {
+  background-color: #ff4757;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+} */
+
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.service-box {
+  background: white;
+  border-radius: 12px;
+  padding: 40px 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e0e0e0;
+}
+
+.service-icon {
+  font-size: 420px;
+  margin-bottom: 20px;
+}
+
+.service-box h3 {
+  font-size: 18px;
+  color: #333;
+}
+
+.image-section {
+  background-color: #3a86ff;
+  color: white;
+  padding: 40px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  min-height: 240px;
+  display: flex;
+  align-items: center;
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                    url('https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1440&q=80');
+  background-size: cover;
+  background-position: center;
+}
+
+.image-content {
+  width: 100%;
+}
+
+.image-section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.image-text-block h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.image-text-block p {
+  line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .services-page {
+    margin-left: 0;
+    padding: 20px;
+  }
+  
+  .services-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .image-section {
+    padding: 30px 20px;
+  }
+}

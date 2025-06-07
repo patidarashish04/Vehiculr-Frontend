@@ -1,0 +1,55 @@
+/* App.css */
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content-container {
+  display: flex;
+  flex: 1;
+  position: relative;
+  margin-top: 60px; /* Header height */
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  margin-left: 280px; /* Left sidebar width */
+  margin-right: 280px; /* Right sidebar width */
+  min-height: calc(100vh - 120px); /* Account for header and footer */
+  transition: all 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1600px) {
+  .main-content {
+    margin-right: 240px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .main-content {
+    margin-left: 240px;
+    margin-right: 240px;
+  }
+}
+
+@media (max-width: 992px) {
+  .main-content {
+    margin-left: 0;
+    margin-right: 0;
+    padding-top: 80px;
+  }
+  
+  .right-sidebar {
+    display: none;
+  }
+}
+
+/* Footer positioning */
+footer {
+  margin-top: auto;
+  position: relative;
+  z-index: 100;
+}

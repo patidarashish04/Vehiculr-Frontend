@@ -1,0 +1,50 @@
+/* src/components/SearchBar.css */
+.searchBar-container {
+  /* width: 100%; */
+  /* max-width: 10000px; */
+  margin: 0 auto;
+  transition: all 0.3s ease;
+}
+
+.searchBar-input-wrapper {
+  display: flex;
+  align-items: center;
+  background-color: #2d3748; /* bg-gray-800 */
+  padding: 8px 16px;
+  border-radius: 9999px; /* rounded-full */
+  transition: all 0.3s ease;
+}
+
+.searchBar-container.focused .searchBar-input-wrapper {
+  box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.5); 
+}
+
+.searchBar-icon {
+  color: #ffffff;
+  margin-right: 12px;
+  font-size: 18px;
+}
+
+
+
+.searchBar-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 14px;
+  outline: none;
+  padding: 4px 0;
+}
+
+.searchBar-input::placeholder {
+  color: #a0aec0; /* placeholder-gray-400 */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .searchBar-container {
+    width: 100%;
+    margin: 0 10px;
+  }
+}

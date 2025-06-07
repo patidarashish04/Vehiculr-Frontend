@@ -1,0 +1,129 @@
+/* Sidebar.css */
+.sidebar-container {
+  width: 280px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  position: fixed;
+  left: 30px;
+  top: 163px;
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+   z-index: -2;
+  border-radius: 12px;
+
+}
+
+
+/* Sidebar.css */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 60px; /* Below header */
+  width: 280px;
+  height: calc(100vh - 120px); /* 100vh - header - footer */
+  overflow-y: auto;
+  background: #f8f9fa;
+  padding: 20px;
+  z-index: 99;
+}
+
+/* Big Box Styling */
+.big-box {
+  background-color: white;
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid #e9ecef;
+  /* Ensure it doesn't touch footer */
+  position: relative;
+}
+
+.big-box:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.big-box-icon {
+  font-size: 20px;
+  margin-right: 12px;
+  color: #3a86ff;
+}
+
+.big-box span {
+  font-size: 16px;
+  font-weight: 600;
+  color: #212529;
+}
+
+/* Small Box Styling */
+.small-box {
+  background-color: white;
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid #e9ecef;
+}
+
+.small-box:hover {
+  background-color: #f1f3f5;
+  transform: translateX(3px);
+}
+
+.small-box-icon {
+  font-size: 18px;
+  margin-right: 12px;
+  color: #495057;
+}
+
+.small-box span {
+  font-size: 15px;
+  color: #343a40;
+}
+
+/* Active State */
+.small-box.active {
+  background-color: #e6f0ff;
+  border-left: 3px solid #3a86ff;
+}
+
+.small-box.active .small-box-icon,
+.small-box.active span {
+  color: #3a86ff;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 240px;
+    padding: 15px;
+  }
+  
+  .create-post-btn {
+    padding: 10px 0;
+    font-size: 14px;
+  }
+  
+  .sidebar-title {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+}
+
+
+.h-8vh {
+    height: 8vh;
+}
+
+.top-8vh {
+    top: 8vh;
+}

@@ -1,0 +1,166 @@
+.feed-card-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f5f5f5; /* Light gray background */
+  min-height: 100vh;
+}
+
+.feed-card {
+  width: 100%;
+  max-width: 500px;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  padding: 15px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-info h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.user-info p {
+  margin: 3px 0 0;
+  font-size: 12px;
+  color: #666;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.card-content h2 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.card-content p {
+  margin: 0 0 10px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.hashtags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.hashtags span {
+  font-size: 12px;
+  color: #1a73e8;
+}
+
+.related-article {
+  padding: 15px;
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.related-article p {
+  margin: 0 0 10px;
+  font-size: 12px;
+  color: #666;
+}
+
+.article-preview {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.article-preview h4 {
+  margin: 0 0 5px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.article-preview p {
+  margin: 0;
+  font-size: 12px;
+  color: #666;
+}
+
+/* Reactions Section */
+.reactions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.emojis {
+  display: flex;
+  gap: 5px;
+}
+
+.emojis span {
+  cursor: pointer;
+  font-size: 16px;
+  transition: transform 0.2s;
+}
+
+.emojis span:hover {
+  transform: scale(1.2);
+}
+
+.reaction-count {
+  font-size: 12px;
+  color: #666;
+}
+
+/* Actions Section */
+.feed-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 15px;
+}
+
+.feed-actions button {
+  flex: 1;
+  padding: 8px 5px;
+  background: none;
+  border: none;
+  font-size: 13px;
+  color: #666;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  transition: background-color 0.2s;
+}
+
+.feed-actions button:hover {
+  background-color: #f5f5f5;
+  border-radius: 5px;
+}
+
+.loading {
+  padding: 20px;
+  text-align: center;
+  color: #666;
+}
