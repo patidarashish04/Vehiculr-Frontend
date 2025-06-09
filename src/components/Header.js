@@ -353,7 +353,7 @@ useEffect(() => {
       {isLoginVisible && (
         <div className="login-modal-overlay">
           <div className="login-modal-container">
-            <newLoginPage
+            <Login 
               onLoginSuccess={handleLoginSuccess}
               onClose={() => setIsLoginVisible(false)}
             />
