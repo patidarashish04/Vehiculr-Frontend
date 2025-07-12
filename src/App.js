@@ -32,6 +32,8 @@ import Login from "./pages/Login";
 import './App.css';
 import HeaderNew from "./pages/HeaderNew";
 import FeedCard from "../src/components/FeedCard";
+import DomainSelection from "./components/patnerOnboarding/DomainSelection";
+import VehicleTypeSelection from "./components/patnerOnboarding/partnerCarBike";
 import SignInMethodPage from "./components/UserOnboarding/SignInMethodPage";
 import EnterOtpScreen from "./components/UserOnboarding/EnterOtpScreen";
 import CreatePassword from "./components/UserOnboarding/CreatePassword";
@@ -95,6 +97,8 @@ const App = () => {
                 <Route path="/admin/blogs" element={<BlogPage />} />
                 <Route path="/garageList" element={<GarageList />} />
                 <Route path="/blogs/:id" element={<BlogDetail />} />
+                <Route path="/DomainSelection" element={<DomainSelection />} />
+                <Route path="/VehicleTypeSelection" element={<VehicleTypeSelection />} />
               </Routes>
             </main>
             <RightSidebar />
