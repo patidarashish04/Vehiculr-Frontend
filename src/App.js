@@ -35,13 +35,36 @@ import Login from "./pages/Login";
 import './App.css';
 import HeaderNew from "./pages/HeaderNew";
 import FeedCard from "../src/components/FeedCard";
-
+import DomainSelection from "./components/patnerOnboarding/DomainSelection";
+import VehicleTypeSelection from "./components/patnerOnboarding/partnerCarBike";
+import SignInMethodPage from "./components/UserOnboarding/SignInMethodPage";
+import EnterOtpScreen from "./components/UserOnboarding/EnterOtpScreen";
+import CreatePassword from "./components/UserOnboarding/CreatePassword";
+import TellAboutYou from "./components/UserOnboarding/TellAboutYou";
+import SelectTopicsYouLove from "./components/UserOnboarding/SelectTopicsYouLove";
+import CreateAPost from "./components/UserOnboarding/CreateAPost";
 
 
 const App = () => {
+  const noLayoutRoutes = ["/signinmethod","/enterotp","/CreatePassword","/TellAboutYou","/SelectTopicsYouLove","/CreateAPost"];
+
+  const hideLayout = noLayoutRoutes.includes(location.pathname);
   return (
     <Router>
       <AuthProvider>
+      {hideLayout ? (
+          // Only render the desired route without layout
+          <Routes>
+            <Route path="/signinmethod" element={<SignInMethodPage />} />
+            <Route path="/enterotp" element={<EnterOtpScreen />} />
+            <Route path="/CreatePassword" element={<CreatePassword />} />
+            <Route path="/TellAboutYou" element={<TellAboutYou />} />
+            <Route path="/SelectTopicsYouLove" element={<SelectTopicsYouLove />} />
+            <Route path="/CreateAPost" element={<CreateAPost />} />
+          </Routes>
+        ) : (
+          // Full layout with sidebar, header
+
         <div className="app-layout">
           <Header />
           <div className="content-container">
@@ -80,13 +103,15 @@ const App = () => {
                 <Route path="/onboarding" element={<DesktopOnboarding />} />
                 <Route path="/aboutYouFilled" element={<AboutYouFilled />} />
                 <Route path="/userLoginSuccessful" element={<UserLoginSuccessful />} />
-
+                <Route path="/DomainSelection" element={<DomainSelection />} />
+                <Route path="/VehicleTypeSelection" element={<VehicleTypeSelection />} />
               </Routes>
             </main>
             <RightSidebar />
           </div>
           {/* <Footer /> */}
         </div>
+        )}
       </AuthProvider>
     </Router>
   );

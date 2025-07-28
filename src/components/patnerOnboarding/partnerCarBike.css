@@ -1,0 +1,139 @@
+/* Outer container: centers the box */
+.vehicle-outer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 48px 0;
+  background: white; /* make sure page background stays white */
+  box-sizing: border-box;
+}
+
+/* Inner white box with gray border and internal padding */
+.vehicle-container {
+  max-width: 600px;
+  width: 100%;
+  background-color: white;
+  border: 1px solid #e0e0e0; /* subtle gray border */
+  border-radius: 12px;
+  padding: 24px; /* space inside the border */
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+/* Progress Bar */
+.progress-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.progress-bar {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 25%;
+  height: 4px;
+  background-color: #2196f3;
+  border-radius: 2px;
+}
+
+.progress-text {
+  margin-left: auto;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Title & Subtitle */
+.vehicle-title {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.vehicle-subtitle {
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+/* Grid */
+.vehicle-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+/* Card */
+.vehicle-card {
+  cursor: pointer;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.vehicle-card:hover {
+  transform: translateY(-2px);
+}
+
+/* Image wrapper */
+.vehicle-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 350px;
+}
+
+/* Image */
+.vehicle-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Label overlay */
+.vehicle-name {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 6px 4px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  font-size: 14px;
+  text-align: center;
+  font-weight: 700;
+}
+
+/* Others button */
+.vehicle-others {
+  grid-column: span 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 48px;
+  border: 1px solid #2196f3;
+  background-color: white;
+  border-radius: 12px;
+}
+
+.vehicle-others .vehicle-name {
+  position: static;
+  background: none;
+  color: #333;
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .vehicle-grid {
+    grid-template-columns: 1fr;
+  }
+  .vehicle-others {
+    grid-column: span 1;
+  }
+}
