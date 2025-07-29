@@ -1,6 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Dashboard from "../src/pages/AdminDashboard";
+import DesktopOnboarding from "./components/DesktopOnboarding";
+import AboutYouFilled from "./components/AboutYouFilled";
+import UserLoginSuccessful from "./components/UserLoginSuccessful";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Slider from "./components/Slider";
@@ -112,6 +115,9 @@ const App = () => {
                 <Route path="/admin/blogs" element={<BlogPage />} />
                 <Route path="/garageList" element={<GarageList />} />
                 <Route path="/blogs/:id" element={<BlogDetail />} />
+                <Route path="/onboarding" element={<DesktopOnboarding />} />
+                <Route path="/aboutYouFilled" element={<AboutYouFilled />} />
+                <Route path="/userLoginSuccessful" element={<UserLoginSuccessful />} />
                 <Route path="/DomainSelection" element={<DomainSelection />} />
                 <Route path="/VehicleTypeSelection" element={<VehicleTypeSelection />} />
                 <Route path="/PartnerDetails" element={<PartnerDetails />} />
