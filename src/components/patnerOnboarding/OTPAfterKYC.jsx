@@ -1,9 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./Style/SignInMethodPage.css";
+
 import { Container, Form, Button } from "react-bootstrap";
 
-const EnterOtpScreen = () => {
+const OTPAfterKYC = () => {
   const [email, setEmail] = useState("");
   const [step, setStep] = useState(2);
   const totalSteps = 10;
@@ -78,9 +78,9 @@ const EnterOtpScreen = () => {
       </div>
 
       {/* Title and Subtitle */}
-      <h4 className="fw-bold text-center">Verify Your Email</h4>
+      <h4 className="fw-bold text-center">Enter the OTP</h4>
       <p className="text-muted text-center mb-4">
-        We’ve sent a code to your email. Enter it below
+        We’ve sent a code to your message. Enter it below
       </p>
 
       {/* OTP Input */}
@@ -139,4 +139,4 @@ const EnterOtpScreen = () => {
   );
 };
 
-export default EnterOtpScreen;
+export default OTPAfterKYC;

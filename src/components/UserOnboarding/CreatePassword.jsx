@@ -4,6 +4,10 @@ import { Container, Form, Button, ProgressBar, InputGroup } from "react-bootstra
 // import { Eye, EyeSlash } from "react-bootstrap-icons";
 
 const CreatePassword = () => {
+    const [email, setEmail] = useState("");
+    const [step, setStep] = useState(5);
+    const totalSteps = 10;
+    const progressPercentage = (step / totalSteps) * 100;
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [confirmVisible, setConfirmVisible] = useState(false);
 
@@ -14,19 +18,24 @@ const CreatePassword = () => {
     e.preventDefault();
     // validate and submit password
     alert("Password submitted");
+    window.location.href = "/TellAboutYou"
   };
 
   return (
     <Container fluid className="d-flex flex-column align-items-center justify-content-center p-4" style={{ maxWidth: "500px" }}>
       {/* Header with Back + Progress */}
-      <div className="d-flex align-items-center justify-content-between w-100 mb-4">
-        <span className="text-primary fw-bold">&larr; Back</span>
-        <div className="flex-grow-1 mx-2">
-          <ProgressBar now={25} style={{ height: "4px", borderRadius: "5px" }} />
+       <div className="navigation w-100">
+        <span className="back">← Back</span>
+        <div className="progress-container">
+          <div className="progress-bar">
+            <div
+              className="progress-fill"
+              style={{ width: `${progressPercentage}%` }}
+            ></div>
+          </div>
+          <span className="step-indicator">{`${step}/${totalSteps}`}</span>
         </div>
-        <div className="px-2 bg-primary text-white rounded">1/4</div>
       </div>
-
       {/* Heading */}
       <h3 className="fw-bold text-center">Create a Password</h3>
       <p className="text-muted text-center mb-4">
@@ -60,7 +69,7 @@ const CreatePassword = () => {
             <InputGroup>
               <Form.Control
                 type={confirmVisible ? "text" : "password"}
-                placeholder="Enter Password"
+                placeholder="Re-Enter Password"
                 required
               />
               <InputGroup.Text onClick={toggleConfirmVisibility} style={{ cursor: "pointer" }}>

@@ -34,16 +34,26 @@ import HeaderNew from "./pages/HeaderNew";
 import FeedCard from "../src/components/FeedCard";
 import DomainSelection from "./components/patnerOnboarding/DomainSelection";
 import VehicleTypeSelection from "./components/patnerOnboarding/partnerCarBike";
-import SignInMethodPage from "./components/UserOnboarding/SignInMethodPage";
+import SignInMethodPage from './components/UserOnboarding/SignInMethodPage';
 import EnterOtpScreen from "./components/UserOnboarding/EnterOtpScreen";
 import CreatePassword from "./components/UserOnboarding/CreatePassword";
 import TellAboutYou from "./components/UserOnboarding/TellAboutYou";
 import SelectTopicsYouLove from "./components/UserOnboarding/SelectTopicsYouLove";
 import CreateAPost from "./components/UserOnboarding/CreateAPost";
+import PhoneNumberSignIn from "./components/UserOnboarding/PhoneNumberSignIn";
+import VerifyNumberOtp from "./components/UserOnboarding/VerifyNumberOtp";
+import PartnerDetails from "./components/patnerOnboarding/partnerDetails";
+import VerifyPartnerNumber from "./components/patnerOnboarding/verifyPartnerNumber";
+import PartnerKYCVerification from "./components/patnerOnboarding/partnerKYCVerification";
+import PartnerKYCDetails from "./components/patnerOnboarding/partnerKYCDetails";
+import OTPAfterKYC from "./components/patnerOnboarding/OTPAfterKYC";
+
+
+
 
 
 const App = () => {
-  const noLayoutRoutes = ["/signinmethod","/enterotp","/CreatePassword","/TellAboutYou","/SelectTopicsYouLove","/CreateAPost"];
+  const noLayoutRoutes = ["/signinmethod","/enterotp","/CreatePassword","/TellAboutYou","/SelectTopicsYouLove","/CreateAPost","/phoneNumberSignin","/VerifyNumberOtp"];
 
   const hideLayout = noLayoutRoutes.includes(location.pathname);
   return (
@@ -52,12 +62,17 @@ const App = () => {
       {hideLayout ? (
           // Only render the desired route without layout
           <Routes>
-            <Route path="/signinmethod" element={<SignInMethodPage />} />
+          
+            <Route path="/signinmethod" element={<SignInMethodPage />} /> 
             <Route path="/enterotp" element={<EnterOtpScreen />} />
             <Route path="/CreatePassword" element={<CreatePassword />} />
             <Route path="/TellAboutYou" element={<TellAboutYou />} />
             <Route path="/SelectTopicsYouLove" element={<SelectTopicsYouLove />} />
             <Route path="/CreateAPost" element={<CreateAPost />} />
+            <Route path="/sign-in" element={<SignInMethodPage />} />
+            <Route path="/signinmethod" element={<SignInMethodPage />} />
+             <Route path="/phoneNumberSignin" element={<PhoneNumberSignIn />} />
+             <Route path="/VerifyNumberOtp" element={<VerifyNumberOtp/>}/>
           </Routes>
         ) : (
           // Full layout with sidebar, header
@@ -99,6 +114,12 @@ const App = () => {
                 <Route path="/blogs/:id" element={<BlogDetail />} />
                 <Route path="/DomainSelection" element={<DomainSelection />} />
                 <Route path="/VehicleTypeSelection" element={<VehicleTypeSelection />} />
+                <Route path="/PartnerDetails" element={<PartnerDetails />} />
+                <Route path="/VerifyPartnerNumber" element={<VerifyPartnerNumber/>} />
+               <Route path="/PartnerKYCVerification" element={<PartnerKYCVerification/>} />
+               <Route path="/PartnerKYCDetails" element={<PartnerKYCDetails/>} />
+               <Route path="/OTPAfterKYC" element={<OTPAfterKYC/>} />
+
               </Routes>
             </main>
             <RightSidebar />
