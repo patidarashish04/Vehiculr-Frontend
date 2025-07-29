@@ -3,9 +3,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./Style/SignInMethodPage.css";
 import { Container, Form, Button } from "react-bootstrap";
 
-const EnterOtpScreen = () => {
+const VerifyNumberOtp = () => {
   const [email, setEmail] = useState("");
-  const [step, setStep] = useState(2);
+  const [step, setStep] = useState(4);
   const totalSteps = 10;
   const progressPercentage = (step / totalSteps) * 100;
   const [otp, setOtp] = useState(["", "", "", "", ""]);
@@ -53,7 +53,7 @@ const EnterOtpScreen = () => {
  const handleSubmit = (e) => {
   e.preventDefault();
   alert("OTP Submitted: " + otp.join(""));
-  window.location.href = "/phoneNumberSignin";
+  window.location.href = "/CreatePassword";
 };
 
 
@@ -78,9 +78,9 @@ const EnterOtpScreen = () => {
       </div>
 
       {/* Title and Subtitle */}
-      <h4 className="fw-bold text-center">Verify Your Email</h4>
+      <h4 className="fw-bold text-center">Verify Your Number</h4>
       <p className="text-muted text-center mb-4">
-        We’ve sent a code to your email. Enter it below
+        We’ve sent a code to your Number. Enter it below
       </p>
 
       {/* OTP Input */}
@@ -131,7 +131,7 @@ const EnterOtpScreen = () => {
   className="w-100"
   style={{ borderRadius: "10px" }}
 >
-  Verify Email
+  Verify Number
 </Button>
 
       </Form>
@@ -139,4 +139,4 @@ const EnterOtpScreen = () => {
   );
 };
 
-export default EnterOtpScreen;
+export default VerifyNumberOtp;

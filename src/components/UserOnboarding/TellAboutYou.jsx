@@ -1,85 +1,120 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, Form, Button, ProgressBar } from "react-bootstrap";
-// import { CameraFill } from "react-bootstrap-icons";
 
 const TellAboutYou = () => {
-  const [profilePic, setProfilePic] = useState(null);
+  const [email, setEmail] = useState("");
+      const [step, setStep] = useState(6);
+      const totalSteps = 10;
+      const progressPercentage = (step / totalSteps) * 100;
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [profileImage, setProfileImage] = useState(null);
 
   const handleImageUpload = (e) => {
-    if (e.target.files[0]) {
-      setProfilePic(URL.createObjectURL(e.target.files[0]));
+    const file = e.target.files[0];
+    if (file) {
+      setProfileImage(URL.createObjectURL(file));
     }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Submitted");
+    alert(`Name: ${firstName} ${lastName}`);
+    window.location.href = "/SelectTopicsYouLove"
   };
 
   return (
-    <Container fluid className="d-flex flex-column align-items-center justify-content-center p-4" style={{ maxWidth: "500px" }}>
-      {/* Header with Progress */}
-      <div className="d-flex align-items-center justify-content-between w-100 mb-4">
-        <span className="text-primary fw-bold">&larr; Back</span>
-        <div className="flex-grow-1 mx-2">
-          <ProgressBar now={25} style={{ height: "4px", borderRadius: "5px" }} />
+    <div className="container d-flex align-items-center justify-content-center vh-100 bg-white">
+      <div className="w-100" style={{ maxWidth: "500px" }}>
+        {/* Header */}
+       <div className="navigation w-100">
+        <span className="back">← Back</span>
+        <div className="progress-container">
+          <div className="progress-bar">
+            <div
+              className="progress-fill"
+              style={{ width: `${progressPercentage}%` }}
+            ></div>
+          </div>
+          <span className="step-indicator">{`${step}/${totalSteps}`}</span>
         </div>
-        <div className="px-2 bg-primary text-white rounded">1/4</div>
       </div>
 
-      {/* Heading */}
-      <h3 className="fw-bold text-center">Tell us About Yourself</h3>
-      <p className="text-muted text-center mb-4">
-        Let's us know about you so we can connect you to the world of vehiculr
-      </p>
+        {/* Title */}
+        <h5 className="fw-bold">Tell us about yourself</h5>
+        <p className="text-muted" style={{ fontSize: "0.9rem" }}>
+          Let's us know about you so we can connect you to the world of vehiculr
+        </p>
 
-      {/* Form Card */}
-      <Form onSubmit={handleSubmit} className="w-100">
-        <div className="p-4 rounded shadow-sm bg-light mb-3 text-center">
-          {/* Profile Pic Upload */}
-          <div className="position-relative mb-4 mx-auto" style={{ width: "120px", height: "120px" }}>
-            <img
-              src={profilePic || "https://via.placeholder.com/120x120?text=+"}
-              alt="Profile"
-              className="rounded-circle w-100 h-100 object-fit-cover"
-              style={{ background: "#f2f2f2" }}
-            />
-            <label
-              htmlFor="profileUpload"
-              className="position-absolute bottom-0 end-0 bg-white rounded-circle p-1"
-              style={{ cursor: "pointer", border: "2px solid #f97316" }}
+        {/* Profile Image Upload */}
+        <div className="d-flex justify-content-center mb-4 position-relative">
+          <label htmlFor="upload-photo" className="position-relative" style={{ cursor: "pointer" }}>
+           <img
+  src={"https://www.w3schools.com/howto/img_avatar.png"}
+  alt="Profile"
+  className="rounded-circle"
+  style={{ width: "80px", height: "80px", objectFit: "cover" }}
+/>
+            <span
+              className="position-absolute bg-white border rounded-circle d-flex align-items-center justify-content-center"
+              style={{
+                bottom: 0,
+                right: 0,
+                width: "24px",
+                height: "24px",
+              }}
             >
-              {/* <CameraFill color="#f97316" /> */}
-            </label>
+              <img
+                src="https://img.icons8.com/fluency-systems-filled/16/000000/camera.png"
+                alt="Upload"
+              />
+            </span>
             <input
               type="file"
-              id="profileUpload"
               accept="image/*"
-              onChange={handleImageUpload}
+              id="upload-photo"
               style={{ display: "none" }}
+              onChange={handleImageUpload}
+            />
+          </label>
+        </div>
+
+        {/* Form */}
+        <form onSubmit={handleSubmit}>
+          <div className="mb-3">
+            <label className="form-label fw-semibold small">First Name</label>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Enter your first name"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+              required
             />
           </div>
 
-          {/* First Name */}
-          <Form.Group className="mb-3" controlId="firstName">
-            <Form.Label>First Name</Form.Label>
-            <Form.Control type="text" placeholder="Enter your first name" required />
-          </Form.Group>
+          <div className="mb-4">
+            <label className="form-label fw-semibold small">Last Name</label>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Enter your last name"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+              required
+            />
+          </div>
 
-          {/* Last Name */}
-          <Form.Group className="mb-3" controlId="lastName">
-            <Form.Label>Confirm Password</Form.Label>
-            <Form.Control type="text" placeholder="Enter your last name" required />
-          </Form.Group>
-        </div>
-
-        {/* Submit */}
-        <Button type="submit" variant="primary" className="w-100" style={{ borderRadius: "10px" }}>
-          Continue
-        </Button>
-      </Form>
-    </Container>
+          <button
+            type="submit"
+            className="btn btn-primary w-100"
+            style={{ borderRadius: "10px" }}
+          >
+            Continue
+          </button>
+        </form>
+      </div>
+    </div>
   );
 };
 
