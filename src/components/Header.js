@@ -361,13 +361,17 @@ useEffect(() => {
               onClose={() => setIsLoginVisible(false)}
             />
           </div>
+         
         </div>
       )}
 
       {/* <div className="hamburger" onClick={toggleMenu}>
         ☰
       </div> */}
+     
     </header>
+
+    
   );
 };
 
