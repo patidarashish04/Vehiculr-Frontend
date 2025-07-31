@@ -159,3 +159,23 @@
     padding: 30px 20px;
   }
 }
+
+.social-media-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  min-height: 200px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e0e0e0;
+  background: white;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  text-align: center;
+}
+
+.social-media-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
