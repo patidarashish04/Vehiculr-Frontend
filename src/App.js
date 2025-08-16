@@ -38,10 +38,18 @@ import CreatePassword from "./components/UserOnboarding/CreatePassword";
 import TellAboutYou from "./components/UserOnboarding/TellAboutYou";
 import SelectTopicsYouLove from "./components/UserOnboarding/SelectTopicsYouLove";
 import CreateAPost from "./components/UserOnboarding/CreateAPost";
+import PartnerDetails from "./components/PartnerOnboarding/PartnerDetails";
+import KYCVerification from "./components/PartnerOnboarding/KYCVerification";
+import KYCAadharDetails from "./components/PartnerOnboarding/KYCAadharDetails";
+import AadharOtpVerification from "./components/PartnerOnboarding/AadharOtpVerification";
+import WhatsappNumberScreen from "./components/PartnerOnboarding/WhatsappNumberScreen";
+import SelectBrands from "./components/PartnerOnboarding/SelectBrands";
 
 
 const App = () => {
-  const noLayoutRoutes = ["/signinmethod","/enterotp","/CreatePassword","/TellAboutYou","/SelectTopicsYouLove","/CreateAPost"];
+  const noLayoutRoutes = ["/signinmethod","/enterotp","/CreatePassword","/TellAboutYou","/SelectTopicsYouLove","/CreateAPost"
+    , "/PartnerDetails","/KYCVerification","/KYCAadharDetails","/AadharOtpVerification","/WhatsappNumberScreen","/SelectBrands"
+  ];
 
   const hideLayout = noLayoutRoutes.includes(location.pathname);
   return (
@@ -56,6 +64,12 @@ const App = () => {
             <Route path="/TellAboutYou" element={<TellAboutYou />} />
             <Route path="/SelectTopicsYouLove" element={<SelectTopicsYouLove />} />
             <Route path="/CreateAPost" element={<CreateAPost />} />
+            <Route path="/PartnerDetails" element={<PartnerDetails />} />
+            <Route path="/KYCVerification" element={<KYCVerification />} />
+            <Route path="/KYCAadharDetails" element={<KYCAadharDetails />} />
+            <Route path="/AadharOtpVerification" element={<AadharOtpVerification />} />
+            <Route path="/WhatsappNumberScreen" element={<WhatsappNumberScreen />} />
+            <Route path="/SelectBrands" element={<SelectBrands />} />
           </Routes>
         ) : (
           // Full layout with sidebar, header

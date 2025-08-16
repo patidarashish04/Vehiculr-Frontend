@@ -339,7 +339,7 @@ useEffect(() => {
             <button
               className="role-button"
               onClick={() => {
-                window.location.href = "/GarageRegistration"
+                window.location.href = "/signinmethod"
                 setIsRoleModalVisible(false);
               }}
             >
