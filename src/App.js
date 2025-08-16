@@ -43,6 +43,19 @@ import CreatePassword from "./components/UserOnboarding/CreatePassword";
 import TellAboutYou from "./components/UserOnboarding/TellAboutYou";
 import SelectTopicsYouLove from "./components/UserOnboarding/SelectTopicsYouLove";
 import CreateAPost from "./components/UserOnboarding/CreateAPost";
+import PartnerDetails from "./components/PartnerOnboarding/PartnerDetails";
+import KYCVerification from "./components/PartnerOnboarding/KYCVerification";
+import KYCAadharDetails from "./components/PartnerOnboarding/KYCAadharDetails";
+import AadharOtpVerification from "./components/PartnerOnboarding/AadharOtpVerification";
+import WhatsappNumberScreen from "./components/PartnerOnboarding/WhatsappNumberScreen";
+import SelectBrands from "./components/PartnerOnboarding/SelectBrands";
+
+
+const App = () => {
+  const noLayoutRoutes = ["/signinmethod","/enterotp","/CreatePassword","/TellAboutYou","/SelectTopicsYouLove","/CreateAPost"
+    , "/PartnerDetails","/KYCVerification","/KYCAadharDetails","/AadharOtpVerification","/WhatsappNumberScreen","/SelectBrands"
+  ];
+
 import PhoneNumberSignIn from "./components/UserOnboarding/PhoneNumberSignIn";
 import VerifyNumberOtp from "./components/UserOnboarding/VerifyNumberOtp";
 import PartnerDetails from "./components/patnerOnboarding/partnerDetails";
@@ -58,6 +71,7 @@ import OTPAfterKYC from "./components/patnerOnboarding/OTPAfterKYC";
 const App = () => {
   const noLayoutRoutes = ["/signinmethod","/enterotp","/CreatePassword","/TellAboutYou","/SelectTopicsYouLove","/CreateAPost","/phoneNumberSignin","/VerifyNumberOtp"];
 
+
   const hideLayout = noLayoutRoutes.includes(location.pathname);
   return (
     <Router>
@@ -72,10 +86,16 @@ const App = () => {
             <Route path="/TellAboutYou" element={<TellAboutYou />} />
             <Route path="/SelectTopicsYouLove" element={<SelectTopicsYouLove />} />
             <Route path="/CreateAPost" element={<CreateAPost />} />
+            <Route path="/PartnerDetails" element={<PartnerDetails />} />
+            <Route path="/KYCVerification" element={<KYCVerification />} />
+            <Route path="/KYCAadharDetails" element={<KYCAadharDetails />} />
+            <Route path="/AadharOtpVerification" element={<AadharOtpVerification />} />
+            <Route path="/WhatsappNumberScreen" element={<WhatsappNumberScreen />} />
+            <Route path="/SelectBrands" element={<SelectBrands />} />
             <Route path="/sign-in" element={<SignInMethodPage />} />
             <Route path="/signinmethod" element={<SignInMethodPage />} />
-             <Route path="/phoneNumberSignin" element={<PhoneNumberSignIn />} />
-             <Route path="/VerifyNumberOtp" element={<VerifyNumberOtp/>}/>
+            <Route path="/phoneNumberSignin" element={<PhoneNumberSignIn />} />
+            <Route path="/VerifyNumberOtp" element={<VerifyNumberOtp/>}/>
           </Routes>
         ) : (
           // Full layout with sidebar, header
