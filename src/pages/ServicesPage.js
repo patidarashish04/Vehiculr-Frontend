@@ -1,6 +1,7 @@
 // src/pages/ServicesPage.js
 import '../styles/ServicesPage.css';
 import { useNavigate } from 'react-router-dom';
+import SocialMediaCard from '../components/SocialMediaCard';
 
 
 // src/pages/ServicesPage.js
@@ -83,6 +84,7 @@ const ServicesPage = () => {
                     </div>
                 </CardContent>
             </Card> */}
+            <SocialMediaCard/>
         </div>
     );
 };

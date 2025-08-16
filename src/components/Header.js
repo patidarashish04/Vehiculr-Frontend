@@ -9,7 +9,7 @@ import garageIcon from '../assets/garage-icon.png';
 import LocationSelector from "../components/LocationSelector";
 import LocationModal from "../components/LocationSelector";
 import { FaMapMarkerAlt } from "react-icons/fa";
-import logoImage from '../assets/icons/Logo.svg'; // or .svg
+import logoImage from '../assets/icons/logo.svg'; // or .svg
 import SearchBox from '../components/SearchBar'; // or .svg
 // import { ReactComponent as logoIcon } from '../assets/icons/logo.svg';
 import { ReactComponent as HomeIcon } from '../assets/icons/Home.svg';
@@ -20,6 +20,8 @@ import { ReactComponent as UserIcon } from '../assets/icons/UserIcon.svg';
 import { ReactComponent as ProfileIcon } from '../assets/icons/Profile.svg';
 // import SearchBar from '../components/';
 // import { ReactComponent as SignOutIcon } from '../assets/icons/signout.svg';
+import { useNavigate } from 'react-router-dom';
+
 
 import {
   FaCar,
@@ -34,6 +36,7 @@ import {
 } from 'react-icons/fa';
 
 const Header = () => {
+  const navigate = useNavigate();
   const {
     user,
     isLoginVisible,
@@ -329,10 +332,10 @@ useEffect(() => {
             <h3>Register as:</h3>
             <button
               className="role-button"
-              onClick={() => {
-                window.location.href = "/UserLogin";
-                setIsRoleModalVisible(false);
-              }}
+               onClick={() => {
+        setIsRoleModalVisible(false);
+       window.location.href = "/signinmethod"
+      }}
             >
               Customer
             </button>
@@ -358,13 +361,17 @@ useEffect(() => {
               onClose={() => setIsLoginVisible(false)}
             />
           </div>
+         
         </div>
       )}
 
       {/* <div className="hamburger" onClick={toggleMenu}>
         ☰
       </div> */}
+     
     </header>
+
+    
   );
 };
 

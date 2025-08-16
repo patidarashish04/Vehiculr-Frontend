@@ -1,6 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Dashboard from "../src/pages/AdminDashboard";
+import DesktopOnboarding from "./components/DesktopOnboarding";
+import AboutYouFilled from "./components/AboutYouFilled";
+import UserLoginSuccessful from "./components/UserLoginSuccessful";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Slider from "./components/Slider";
@@ -32,7 +35,9 @@ import Login from "./pages/Login";
 import './App.css';
 import HeaderNew from "./pages/HeaderNew";
 import FeedCard from "../src/components/FeedCard";
-import SignInMethodPage from "./components/UserOnboarding/SignInMethodPage";
+import DomainSelection from "./components/patnerOnboarding/DomainSelection";
+import VehicleTypeSelection from "./components/patnerOnboarding/partnerCarBike";
+import SignInMethodPage from './components/UserOnboarding/SignInMethodPage';
 import EnterOtpScreen from "./components/UserOnboarding/EnterOtpScreen";
 import CreatePassword from "./components/UserOnboarding/CreatePassword";
 import TellAboutYou from "./components/UserOnboarding/TellAboutYou";
@@ -51,6 +56,22 @@ const App = () => {
     , "/PartnerDetails","/KYCVerification","/KYCAadharDetails","/AadharOtpVerification","/WhatsappNumberScreen","/SelectBrands"
   ];
 
+import PhoneNumberSignIn from "./components/UserOnboarding/PhoneNumberSignIn";
+import VerifyNumberOtp from "./components/UserOnboarding/VerifyNumberOtp";
+import PartnerDetails from "./components/patnerOnboarding/partnerDetails";
+import VerifyPartnerNumber from "./components/patnerOnboarding/verifyPartnerNumber";
+import PartnerKYCVerification from "./components/patnerOnboarding/partnerKYCVerification";
+import PartnerKYCDetails from "./components/patnerOnboarding/partnerKYCDetails";
+import OTPAfterKYC from "./components/patnerOnboarding/OTPAfterKYC";
+
+
+
+
+
+const App = () => {
+  const noLayoutRoutes = ["/signinmethod","/enterotp","/CreatePassword","/TellAboutYou","/SelectTopicsYouLove","/CreateAPost","/phoneNumberSignin","/VerifyNumberOtp"];
+
+
   const hideLayout = noLayoutRoutes.includes(location.pathname);
   return (
     <Router>
@@ -58,7 +79,8 @@ const App = () => {
       {hideLayout ? (
           // Only render the desired route without layout
           <Routes>
-            <Route path="/signinmethod" element={<SignInMethodPage />} />
+          
+            <Route path="/signinmethod" element={<SignInMethodPage />} /> 
             <Route path="/enterotp" element={<EnterOtpScreen />} />
             <Route path="/CreatePassword" element={<CreatePassword />} />
             <Route path="/TellAboutYou" element={<TellAboutYou />} />
@@ -70,6 +92,10 @@ const App = () => {
             <Route path="/AadharOtpVerification" element={<AadharOtpVerification />} />
             <Route path="/WhatsappNumberScreen" element={<WhatsappNumberScreen />} />
             <Route path="/SelectBrands" element={<SelectBrands />} />
+            <Route path="/sign-in" element={<SignInMethodPage />} />
+            <Route path="/signinmethod" element={<SignInMethodPage />} />
+            <Route path="/phoneNumberSignin" element={<PhoneNumberSignIn />} />
+            <Route path="/VerifyNumberOtp" element={<VerifyNumberOtp/>}/>
           </Routes>
         ) : (
           // Full layout with sidebar, header
@@ -109,6 +135,17 @@ const App = () => {
                 <Route path="/admin/blogs" element={<BlogPage />} />
                 <Route path="/garageList" element={<GarageList />} />
                 <Route path="/blogs/:id" element={<BlogDetail />} />
+                <Route path="/onboarding" element={<DesktopOnboarding />} />
+                <Route path="/aboutYouFilled" element={<AboutYouFilled />} />
+                <Route path="/userLoginSuccessful" element={<UserLoginSuccessful />} />
+                <Route path="/DomainSelection" element={<DomainSelection />} />
+                <Route path="/VehicleTypeSelection" element={<VehicleTypeSelection />} />
+                <Route path="/PartnerDetails" element={<PartnerDetails />} />
+                <Route path="/VerifyPartnerNumber" element={<VerifyPartnerNumber/>} />
+               <Route path="/PartnerKYCVerification" element={<PartnerKYCVerification/>} />
+               <Route path="/PartnerKYCDetails" element={<PartnerKYCDetails/>} />
+               <Route path="/OTPAfterKYC" element={<OTPAfterKYC/>} />
+
               </Routes>
             </main>
             <RightSidebar />

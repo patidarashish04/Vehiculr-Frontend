@@ -11,6 +11,10 @@ const allTopics = [
 ];
 
 const SelectTopicsYouLove = () => {
+  const [email, setEmail] = useState("");
+        const [step, setStep] = useState(7);
+        const totalSteps = 10;
+        const progressPercentage = (step / totalSteps) * 100;
   const [selectedTopics, setSelectedTopics] = useState([]);
 
   const toggleTopic = (topic) => {
@@ -30,14 +34,19 @@ const SelectTopicsYouLove = () => {
   };
 
   return (
-    <Container fluid className="d-flex flex-column align-items-center justify-content-center p-4" style={{ maxWidth: "700px" }}>
+    <Container fluid className="d-flex flex-column align-items-center justify-content-center p-4" style={{ maxWidth: "600px" }}>
       {/* Header */}
-      <div className="d-flex align-items-center justify-content-between w-100 mb-4">
-        <span className="text-primary fw-bold">&larr; Back</span>
-        <div className="flex-grow-1 mx-2">
-          <ProgressBar now={25} style={{ height: "4px", borderRadius: "5px" }} />
+       <div className="navigation w-100">
+        <span className="back">← Back</span>
+        <div className="progress-container">
+          <div className="progress-bar">
+            <div
+              className="progress-fill"
+              style={{ width: `${progressPercentage}%` }}
+            ></div>
+          </div>
+          <span className="step-indicator">{`${step}/${totalSteps}`}</span>
         </div>
-        <div className="px-2 bg-primary text-white rounded">1/4</div>
       </div>
 
       {/* Heading */}

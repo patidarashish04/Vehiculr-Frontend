@@ -1,0 +1,15 @@
+body {
+  background-color: #ffffff;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.back-arrow {
+  font-size: 20px;
+  color: #000;
+  cursor: pointer;
+}
+
+.step-indicator {
+  font-size: 14px;
+  font-weight: 500;
+}
