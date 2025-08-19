@@ -1,0 +1,123 @@
+/* Container */
+.domain-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 16px;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Progress Bar */
+.progress-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.progress-bar {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 25%;
+  height: 4px;
+  background-color: #2196f3;
+  border-radius: 2px;
+}
+
+.progress-text {
+  margin-left: auto;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Title & Subtitle */
+.domain-title {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.domain-subtitle {
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+/* Grid */
+.domain-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+/* Card */
+.domain-card {
+  position: relative;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.domain-card:hover {
+  transform: translateY(-2px);
+}
+
+/* Image */
+.domain-icon {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+
+}
+
+/* Name Overlay */
+.domain-name {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0));
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+  padding: 6px 4px;
+  font-weight: 700;
+}
+
+/* Others Button */
+.domain-others {
+  grid-column: span 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 48px;
+  border: 1px solid #2196f3;
+  background-color: white;
+  border-radius: 12px;
+}
+
+.domain-others .domain-name {
+  position: static;
+  background: none;
+  color: #333;
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .domain-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .domain-others {
+    grid-column: span 2;
+  }
+}
