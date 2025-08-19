@@ -38,6 +38,7 @@ import FeedCard from "../src/components/FeedCard";
 import DomainSelection from "./components/patnerOnboarding/DomainSelection";
 import VehicleTypeSelection from "./components/patnerOnboarding/partnerCarBike";
 import SignInMethodPage from './components/UserOnboarding/SignInMethodPage';
+import SignupPage from './components/UserOnboarding/SignupPage';
 import EnterOtpScreen from "./components/UserOnboarding/EnterOtpScreen";
 import CreatePassword from "./components/UserOnboarding/CreatePassword";
 import TellAboutYou from "./components/UserOnboarding/TellAboutYou";
@@ -56,7 +57,7 @@ import OTPAfterKYC from "./components/patnerOnboarding/OTPAfterKYC";
 
 
 const App = () => {
-  const noLayoutRoutes = ["/signinmethod","/enterotp","/CreatePassword","/TellAboutYou","/SelectTopicsYouLove","/CreateAPost","/phoneNumberSignin","/VerifyNumberOtp"];
+  const noLayoutRoutes = ["/signinmethod","/enterotp","/CreatePassword","/TellAboutYou","/SelectTopicsYouLove","/CreateAPost","/phoneNumberSignin","/VerifyNumberOtp","/signup","/signup/email","/signup/phone"];
 
   const hideLayout = noLayoutRoutes.includes(location.pathname);
   return (
@@ -65,7 +66,7 @@ const App = () => {
       {hideLayout ? (
           // Only render the desired route without layout
           <Routes>
-          
+            <Route path="/signup/*" element={<SignupPage />} />
             <Route path="/signinmethod" element={<SignInMethodPage />} /> 
             <Route path="/enterotp" element={<EnterOtpScreen />} />
             <Route path="/CreatePassword" element={<CreatePassword />} />

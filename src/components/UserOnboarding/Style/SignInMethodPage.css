@@ -15,17 +15,21 @@ html, body {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
+}
+
+.navigation-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .progress-container {
-  margin-top: 25px;
+  padding-top: 1vh;
   display: flex;
   align-items: center;
   flex-grow: 1;
-  margin-left: 15px;
-  margin-right: 15px;
-  gap: 10px;
+  margin-bottom: 24px;
 }
 
 .progress-bar {
@@ -45,8 +49,14 @@ html, body {
 }
 
 .step-indicator {
-  font-size: 14px;
-  color: #0b6e99;
+  border: 1px solid #0b6e99;
+  border-radius: 8px;
+  background-color: #0b6e99;
+  color: white;
+  padding: 2px;
+  min-width: 14%;
+  text-align: center;
+  font-size: 11px;
   font-weight: 500;
   white-space: nowrap;
 }
