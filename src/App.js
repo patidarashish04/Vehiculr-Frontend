@@ -4,6 +4,8 @@ import Dashboard from "../src/pages/AdminDashboard";
 import DesktopOnboarding from "./components/DesktopOnboarding";
 import AboutYouFilled from "./components/AboutYouFilled";
 import UserLoginSuccessful from "./components/UserLoginSuccessful";
+import SelectBrand from "./components/SelectBrand";
+import SelectBikeBrand from "./components/SelectBikeBrand";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Slider from "./components/Slider";
@@ -139,6 +141,8 @@ const App = () => {
                 <Route path="/onboarding" element={<DesktopOnboarding />} />
                 <Route path="/aboutYouFilled" element={<AboutYouFilled />} />
                 <Route path="/userLoginSuccessful" element={<UserLoginSuccessful />} />
+                <Route path="/selectBrand" element={<SelectBrand />} />
+                <Route path="/selectBikeBrand" element={<SelectBikeBrand />} />
                 <Route path="/DomainSelection" element={<DomainSelection />} />
                 <Route path="/VehicleTypeSelection" element={<VehicleTypeSelection />} />
                 <Route path="/PartnerDetails" element={<PartnerDetails />} />
