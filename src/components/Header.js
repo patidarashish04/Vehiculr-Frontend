@@ -334,7 +334,7 @@ useEffect(() => {
               className="role-button"
                onClick={() => {
         setIsRoleModalVisible(false);
-       window.location.href = "/signinmethod"
+       window.location.href = "/signup"
       }}
             >
               Customer

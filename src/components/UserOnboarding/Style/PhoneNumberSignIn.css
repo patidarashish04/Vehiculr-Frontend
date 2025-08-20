@@ -3,13 +3,21 @@ body {
   font-family: 'Segoe UI', sans-serif;
 }
 
-.back-arrow {
-  font-size: 20px;
+.back {
+  font-size: 18px;
   color: #000;
   cursor: pointer;
 }
 
 .step-indicator {
-  font-size: 14px;
+  border: 1px solid #0b6e99;
+  border-radius: 8px;
+  background-color: #0b6e99;
+  color: white;
+  padding: 2px;
+  min-width: 14%;
+  text-align: center;
+  font-size: 11px;
   font-weight: 500;
+  white-space: nowrap;
 }
